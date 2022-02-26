@@ -9,7 +9,7 @@ import Header from './components/Header'
 function App () {
   return (
     <div className="App">
-      <Header pageTitle='Uygulama'></Header>
+      <Header pageTitle='Uygulama' selectedPath={'/'}></Header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="units" element={<Units />} />
