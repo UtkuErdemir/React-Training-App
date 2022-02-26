@@ -1,0 +1,7 @@
+.segment-container{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    column-gap: 4px;
+}
