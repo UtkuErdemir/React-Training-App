@@ -4,12 +4,12 @@ import { Routes, Route } from 'react-router-dom'
 import Units from './pages/Units'
 import Home from './pages/Home'
 import UnitDetail from './pages/UnitDetail'
+import Header from './components/Header'
 
 function App () {
   return (
     <div className="App">
-      <h2>React App</h2>
-
+      <Header pageTitle='Uygulama'></Header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="units" element={<Units />} />
