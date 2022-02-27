@@ -22,7 +22,7 @@ function Units () {
   changeAppTitle('Units')
 
   useEffect(() => {
-    dispatch(getAllUnits())
+    if (units.length === 0) { dispatch(getAllUnits()) }
   }, [])
   return (
     <div>
