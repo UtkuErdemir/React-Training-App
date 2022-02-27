@@ -17,14 +17,13 @@ import './style.scss'
 function Units () {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const result = useSelector(state => state.units)
+  const { data: units } = useSelector(state => state.units)
 
   changeAppTitle('Units')
 
   useEffect(() => {
     dispatch(getAllUnits())
   }, [])
-
   return (
     <div>
       <ItemTitle value={'Ages'}></ItemTitle>
@@ -38,22 +37,24 @@ function Units () {
         <TR>
           {getTableTitles()}
         </TR>
-        <TR onPress={(id) => navigate(`/unit-detail/${id}`)}>
-          <TD title='sadasdsad'></TD>
-          <TD title='sadasdsad'></TD>
-          <TD title='sadasdsad'></TD>
-          <TD title='sadasdsad'></TD>
-        </TR>
-        <TR>
-          <TD title='sadasdsad'></TD>
-          <TD title='sadasdsad'></TD>
-          <TD title='sadasdsad'></TD>
-          <TD title='sadasdsad'></TD>
-        </TR>
+        {
+          units.length > 0 && units.map(unit => (
+            <TR key={unit.id} onPress={() => navigate(`/unit-detail/${unit.id}`)}>
+            <TD title={unit.name}></TD>
+            <TD title={unit.age}></TD>
+            <TD title={costToString(unit.cost)}></TD>
+            <TD title='sadasdsad'></TD>
+          </TR>
+          ))
+        }
       </Table>
     </div>
   )
 }
+
+const costToString = (cost) => cost
+  ? Object.entries(cost).map(element => `${element[0]}:${element[1]}`).join(',')
+  : ''
 
 const getTableTitles = () => unitResultTitles.map((title, index) => <TH key={index} title={title}></TH>)
 
