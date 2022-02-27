@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+
 import { useNavigate } from 'react-router-dom'
+import { getAllUnits } from '../../store/units/unitsActions'
 import { segments, unitResultTitles } from '../../utils/constants'
 import { changeAppTitle } from '../../utils/helpers'
 import CostFilter from './components/CostFilter'
@@ -12,8 +15,16 @@ import TR from './components/Table/components/TR'
 import './style.scss'
 
 function Units () {
-  changeAppTitle('Units')
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const result = useSelector(state => state.units)
+
+  changeAppTitle('Units')
+
+  useEffect(() => {
+    dispatch(getAllUnits())
+  }, [])
+
   return (
     <div>
       <ItemTitle value={'Ages'}></ItemTitle>
