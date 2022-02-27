@@ -1,6 +1,6 @@
 import React from 'react'
-import Checkbox from '../Checkbox'
-import Range from '../Range'
+import Checkbox from '../../../../components/Checkbox'
+import Range from '../../../../components/Range'
 import PropTypes from 'prop-types'
 import './style.scss'
 
