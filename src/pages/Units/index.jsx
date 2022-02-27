@@ -39,11 +39,11 @@ function Units () {
         </TR>
         {
           units.length > 0 && units.map(unit => (
-            <TR key={unit.id} onPress={() => navigate(`/unit-detail/${unit.id}`)}>
+          <TR key={unit.id} onPress={() => navigate(`/unit-detail/${unit.id}`)}>
+            <TD title={unit.id}></TD>
             <TD title={unit.name}></TD>
             <TD title={unit.age}></TD>
             <TD title={costToString(unit.cost)}></TD>
-            <TD title='sadasdsad'></TD>
           </TR>
           ))
         }
