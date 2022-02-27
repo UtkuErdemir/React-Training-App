@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { segments, unitResultTitles } from '../../utils/constants'
+import { changeAppTitle } from '../../utils/helpers'
 import CostFilter from './components/CostFilter'
 import ItemTitle from './components/ItemTitle'
 import Segment from './components/Segment'
@@ -11,6 +12,7 @@ import TR from './components/Table/components/TR'
 import './style.scss'
 
 function Units () {
+  changeAppTitle('Units')
   const navigate = useNavigate()
   return (
     <div>

@@ -1,10 +1,12 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import { changeAppTitle } from '../../utils/helpers'
 import Table from '../Units/components/Table'
 import TD from '../Units/components/Table/components/TD'
 import TR from '../Units/components/Table/components/TR'
 
 function UnitDetail () {
+  changeAppTitle('Unit Details')
   const params = useParams()
   const id = params.id || ''
   return (
