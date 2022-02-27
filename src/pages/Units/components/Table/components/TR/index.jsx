@@ -2,13 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './style.scss'
 
-function TR ({ children }) {
+function TR ({ children, onPress }) {
   return (
-      <tr>{ children }</tr>
+      <tr onClick={() => onPress(1)}>{ children }</tr>
   )
 }
 
 TR.propTypes = {
+  onPress: PropTypes.func,
   children: PropTypes.object
 }
 

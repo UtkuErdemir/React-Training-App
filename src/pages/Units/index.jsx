@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { segments } from '../../utils/constants'
 import CostFilter from './components/CostFilter'
 import ItemTitle from './components/ItemTitle'
@@ -10,6 +11,7 @@ import TR from './components/Table/components/TR'
 import './style.scss'
 
 function Units () {
+  const navigate = useNavigate()
   return (
     <div>
       <ItemTitle value={'Ages'}></ItemTitle>
@@ -25,7 +27,7 @@ function Units () {
           <TH title='sadasdsad'></TH>
           <TH title='sadasdsad'></TH>
         </TR>
-        <TR>
+        <TR onPress={(id) => navigate(`/unit-detail/${id}`)}>
           <TD title='sadasdsad'></TD>
           <TD title='sadasdsad'></TD>
           <TD title='sadasdsad'></TD>
