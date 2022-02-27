@@ -5,7 +5,7 @@ import './style.scss'
 function ItemTitle ({ value, align }) {
   const titleAlign = align || 'left'
   return (
-    <h4 className='title' align={titleAlign}>{value}</h4>
+    <h4 className='title' align={titleAlign} data-testid="title">{value}</h4>
   )
 }
 

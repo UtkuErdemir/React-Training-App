@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import './style.scss'
 
 function Checkbox ({ onPress, value, title }) {
-  const checkboxTitle = title || ''
+  const checkboxTitle = title || 'Checkbox'
   return (
     <>
-      <input type="checkbox" onClick={() => { onPress(value) }}></input>
-      <label htmlFor="vehicle1">{checkboxTitle}</label>
+      <input type="checkbox" id="checkbox" onClick={() => { onPress(value) }}></input>
+      <label htmlFor="checkbox" data-testid="checkbox">{checkboxTitle}</label>
     </>
   )
 }

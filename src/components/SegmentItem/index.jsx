@@ -4,13 +4,13 @@ import './style.scss'
 
 function SegmentItem ({ title, value, onPress, isActive }) {
   return (
-    <div className={isActive ? 'segment-item-active' : 'segment-item'} onClick={() => onPress(value)}>{title}</div>
+    <div className={isActive ? 'segment-item-active' : 'segment-item'} onClick={() => onPress(value)} data-testid="segment-item">{title}</div>
   )
 }
 
 SegmentItem.propTypes = {
   title: PropTypes.string,
-  value: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+  value: PropTypes.string,
   onPress: PropTypes.func,
   isActive: PropTypes.bool
 }

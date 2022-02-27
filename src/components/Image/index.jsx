@@ -6,7 +6,7 @@ function Image ({ src, width, height }) {
   const imgWidth = width || 32
   const imgHeight = height || 32
   return (
-    <img src={imgSrc} height={imgHeight} width={imgWidth}></img>
+    <img data-testid="image" src={imgSrc} height={imgHeight} width={imgWidth}></img>
   )
 }
 
