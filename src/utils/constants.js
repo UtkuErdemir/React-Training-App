@@ -20,3 +20,5 @@ export const segments = [
     value: 'imperial'
   }
 ]
+
+export const unitResultTitles = ['ID', 'Name', 'Age', 'Cost']

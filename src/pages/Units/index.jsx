@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { segments } from '../../utils/constants'
+import { segments, unitResultTitles } from '../../utils/constants'
 import CostFilter from './components/CostFilter'
 import ItemTitle from './components/ItemTitle'
 import Segment from './components/Segment'
@@ -17,16 +17,13 @@ function Units () {
       <ItemTitle value={'Ages'}></ItemTitle>
       <Segment items={segments}></Segment>
       <ItemTitle value={'Costs'}></ItemTitle>
-      <CostFilter></CostFilter>
-      <CostFilter></CostFilter>
-      <CostFilter></CostFilter>
+      <CostFilter title={'Food'}></CostFilter>
+      <CostFilter title={'Wood'}></CostFilter>
+      <CostFilter title={'Gold'}></CostFilter>
       <ItemTitle value={'Result'}></ItemTitle>
       <Table className="result-table">
         <TR>
-          <TH title='ID'></TH>
-          <TH title='Name'></TH>
-          <TH title='Age'></TH>
-          <TH title='Costs'></TH>
+          {getTableTitles()}
         </TR>
         <TR onPress={(id) => navigate(`/unit-detail/${id}`)}>
           <TD title='sadasdsad'></TD>
@@ -44,5 +41,7 @@ function Units () {
     </div>
   )
 }
+
+const getTableTitles = () => unitResultTitles.map((title, index) => <TH key={index} title={title}></TH>)
 
 export default Units
