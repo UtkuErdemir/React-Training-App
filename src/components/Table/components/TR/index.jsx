@@ -10,7 +10,7 @@ function TR ({ children, onPress }) {
 
 TR.propTypes = {
   onPress: PropTypes.func,
-  children: PropTypes.object
+  children: PropTypes.array
 }
 
 export default TR

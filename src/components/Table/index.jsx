@@ -5,13 +5,15 @@ import './style.scss'
 function Table ({ children }) {
   return (
     <table className='table'>
-        {children}
+      <tbody>
+      {children}
+      </tbody>
     </table>
   )
 }
 
 Table.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.array
 }
 
 export default Table
