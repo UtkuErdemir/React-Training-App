@@ -23,16 +23,19 @@ function Units () {
       <ItemTitle value={'Result'}></ItemTitle>
       <Table className="result-table">
         <TR>
-          <TH title='sadasdsad'></TH>
-          <TH title='sadasdsad'></TH>
-          <TH title='sadasdsad'></TH>
+          <TH title='ID'></TH>
+          <TH title='Name'></TH>
+          <TH title='Age'></TH>
+          <TH title='Costs'></TH>
         </TR>
         <TR onPress={(id) => navigate(`/unit-detail/${id}`)}>
           <TD title='sadasdsad'></TD>
           <TD title='sadasdsad'></TD>
           <TD title='sadasdsad'></TD>
+          <TD title='sadasdsad'></TD>
         </TR>
         <TR>
+          <TD title='sadasdsad'></TD>
           <TD title='sadasdsad'></TD>
           <TD title='sadasdsad'></TD>
           <TD title='sadasdsad'></TD>
