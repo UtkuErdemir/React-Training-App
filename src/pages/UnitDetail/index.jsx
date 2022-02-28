@@ -55,23 +55,23 @@ function UnitDetail () {
         </TR>
         <TR>
           <TD title='Build Time:'></TD>
-          <TD title={unit.build_time.toString()}></TD>
+          <TD title={unit.build_time?.toString()}></TD>
         </TR>
         <TR>
           <TD title='Reload Time:'></TD>
-          <TD title={unit.reload_time.toString()}></TD>
+          <TD title={unit.reload_time?.toString()}></TD>
         </TR>
         <TR>
           <TD title='Hit Points:'></TD>
-          <TD title={unit.hit_points.toString()}></TD>
+          <TD title={unit.hit_points?.toString()}></TD>
         </TR>
         <TR>
           <TD title='Attack:'></TD>
-          <TD title={unit.attack.toString()}></TD>
+          <TD title={unit.attack?.toString()}></TD>
         </TR>
         <TR>
           <TD title='Accuracy:'></TD>
-          <TD title={unit.accuracy.toString()}></TD>
+          <TD title={unit.accuracy?.toString()}></TD>
         </TR>
       </Table>
       }
