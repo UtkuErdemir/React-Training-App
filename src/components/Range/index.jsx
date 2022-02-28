@@ -6,7 +6,7 @@ function Range ({ onChange, disabled, max, min, value }) {
   const rangeMin = min || 0
   const rangeMax = max || 200
   return (
-    <input disabled={disabled} type="range" min={rangeMin} max={rangeMax} value={rangeValue} onChange={(e) => onChange(e.target.value)}/>
+    <input data-testid="range" disabled={disabled} type="range" min={rangeMin} max={rangeMax} value={rangeValue} onChange={(e) => onChange(e.target.value)}/>
   )
 }
 
