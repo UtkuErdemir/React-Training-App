@@ -4,7 +4,7 @@ import './style.scss'
 
 function TR ({ children, onPress }) {
   return (
-      <tr onClick={() => onPress(1)}>{ children }</tr>
+      <tr onClick={() => onPress()}>{ children }</tr>
   )
 }
 
