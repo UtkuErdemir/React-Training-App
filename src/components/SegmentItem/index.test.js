@@ -15,3 +15,9 @@ test('it displays given title', () => {
   const itemTitle = screen.getByText('Test')
   expect(itemTitle).toBeInTheDocument()
 })
+
+test('it has active class when is active setted true', () => {
+  render(<SegmentItem isActive={true}/>)
+  const itemTitle = screen.getByTestId('segment-item')
+  expect(itemTitle).toHaveClass('segment-item-active')
+})
