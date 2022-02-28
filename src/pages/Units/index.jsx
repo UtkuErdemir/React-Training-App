@@ -31,13 +31,13 @@ function Units () {
   })
   const units = useSelector(state => {
     const initialData = state.units.data
-    if (!selectedItem.value || selectedItem.value === 'all') return initialData
-
-    const filteredDataByAge = [...initialData].filter(data => data.age?.toLowerCase() === selectedItem.value?.toLowerCase())
+    const filteredDataByAge = [...initialData].filter(data => selectedItem.value === 'all' || data.age?.toLowerCase() === selectedItem.value?.toLowerCase())
     let filteredDataByCost = [...filteredDataByAge]
+
     Object.entries(costFilters).forEach(([name, value]) => {
       filteredDataByCost = filteredDataByCost.filter(data => data.cost && (data.cost[name] >= value || (!data.cost[name] && value === '0')))
     })
+
     return filteredDataByCost
   })
 
