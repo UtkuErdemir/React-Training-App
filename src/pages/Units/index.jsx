@@ -17,8 +17,14 @@ import './style.scss'
 function Units () {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { data: units } = useSelector(state => state.units)
   const [selectedItem, setSelectedItem] = useState({})
+  const units = useSelector(state => {
+    const initialData = state.units.data
+    if (!selectedItem.value || selectedItem.value === 'all') return initialData
+
+    const filteredDataByAge = [...initialData].filter(data => data.age?.toLowerCase() === selectedItem.value?.toLowerCase())
+    return filteredDataByAge
+  })
 
   changeAppTitle('Units')
 
