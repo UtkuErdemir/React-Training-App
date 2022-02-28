@@ -16,8 +16,8 @@ test('it displays Checkbox text when title is not given.', () => {
 
 test('it emits given function when pressed the checkbox.', () => {
   const onPress = jest.fn()
-  render(<Checkbox onPress={onPress} value={'test'}/>)
+  render(<Checkbox onPress={onPress}/>)
   const checkbox = screen.getByTestId('checkbox')
   fireEvent.click(checkbox)
-  expect(onPress).toHaveBeenCalledWith('test')
+  expect(onPress).toHaveBeenCalledWith(true)
 })

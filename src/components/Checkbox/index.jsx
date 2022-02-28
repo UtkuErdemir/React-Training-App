@@ -6,7 +6,7 @@ function Checkbox ({ onPress, value, title }) {
   const checkboxTitle = title || 'Checkbox'
   return (
     <>
-      <input type="checkbox" id="checkbox" onClick={() => { onPress(value) }}></input>
+      <input type="checkbox" id="checkbox" onClick={() => { onPress(!value) }}></input>
       <label htmlFor="checkbox" data-testid="checkbox">{checkboxTitle}</label>
     </>
   )
@@ -14,7 +14,7 @@ function Checkbox ({ onPress, value, title }) {
 
 Checkbox.propTypes = {
   onPress: PropTypes.func,
-  value: PropTypes.string,
+  value: PropTypes.bool,
   title: PropTypes.string
 }
 
