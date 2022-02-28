@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { useNavigate } from 'react-router-dom'
@@ -18,6 +18,7 @@ function Units () {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { data: units } = useSelector(state => state.units)
+  const [selectedItem, setSelectedItem] = useState({})
 
   changeAppTitle('Units')
 
@@ -27,7 +28,7 @@ function Units () {
   return (
     <div>
       <ItemTitle value={'Ages'}></ItemTitle>
-      <Segment items={segments}></Segment>
+      <Segment onSelected={setSelectedItem} items={segments} value={selectedItem.value}></Segment>
       <ItemTitle value={'Costs'}></ItemTitle>
       <CostFilter title={'Food'}></CostFilter>
       <CostFilter title={'Wood'}></CostFilter>
