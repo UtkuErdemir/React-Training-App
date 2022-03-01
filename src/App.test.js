@@ -13,4 +13,5 @@ test('renders app correctly', () => {
   renderWithRouter(
       <App />
   )
+  expect(mockDispatch).toBeCalled()
 })
