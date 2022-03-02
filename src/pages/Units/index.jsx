@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { getAllUnits } from '../../store/units/unitsActions'
 import { segments, unitResultTitles } from '../../utils/constants'
-import { changeAppTitle } from '../../utils/helpers'
+import { changeAppTitle, costToString } from '../../utils/helpers'
 import CostFilter from './components/CostFilter'
 import ItemTitle from '../../components/ItemTitle'
 import Segment from '../../components/Segment'
@@ -73,10 +73,6 @@ function Units () {
     </div>
   )
 }
-
-const costToString = (cost) => cost
-  ? Object.entries(cost).map(element => `${element[0]}:${element[1]}`).join(',')
-  : ''
 
 const getTableTitles = () => unitResultTitles.map((title, index) => <TH key={index} title={title}></TH>)
 
