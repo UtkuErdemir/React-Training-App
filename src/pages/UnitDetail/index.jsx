@@ -10,11 +10,7 @@ import { getAllUnits } from '../../store/units/unitsActions'
 function UnitDetail () {
   const params = useParams()
   const id = params.id || ''
-  const unit = useSelector(state => {
-    const initalUnits = state.units.data
-    const selectedUnit = findSelectedUnitById(id, initalUnits)
-    return selectedUnit
-  })
+  const unit = useSelector(state => filterFn(state, id))
   const dispatch = useDispatch()
   changeAppTitle('Unit Details')
 
@@ -80,5 +76,9 @@ function UnitDetail () {
 }
 
 const findSelectedUnitById = (id, units) => units.find(unit => unit.id === parseInt(id))
-
+export const filterFn = (state, id) => {
+  const initalUnits = state.units.data
+  const selectedUnit = findSelectedUnitById(id, initalUnits)
+  return selectedUnit
+}
 export default UnitDetail
