@@ -25,7 +25,7 @@ function UnitDetail () {
     <div>
       {unit &&
       <Table>
-        <TR onPress={() => alert(id)}>
+        <TR>
           <TD title='ID:'></TD>
           <TD title={unit.id.toString()}></TD>
         </TR>
